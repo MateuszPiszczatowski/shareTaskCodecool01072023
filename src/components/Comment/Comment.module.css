@@ -1,0 +1,48 @@
+article {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: 1px solid black;
+    margin: 1rem;
+    padding: 1rem;
+}
+
+article > div {
+    display: flex;
+    flex-direction: column;
+    max-width: 70%;
+}
+
+figure {
+    padding-right: 2rem;
+    max-width: 30%;
+    position: relative;
+}
+figure > img {
+    border-radius: 50%;
+    height: var(--img-size);
+    width: var(--img-size);
+}
+
+header {
+    font-size: var(--fs-md);
+}
+
+.CommentText {
+    font-size: var(--fs-sm);
+}
+
+footer {
+}
+
+footer > button {
+}
+
+time {
+    font-size: var(--fs-xs);
+}
+
+li {
+    list-style: none;
+}

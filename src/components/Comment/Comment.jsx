@@ -1,37 +1,41 @@
-const Comment = ({ image, name, date, text, comments, isAnswer }) => {
-  return (
-    <>
-      <article>
-        <img src={image} alt={`${name}`}></img>
-        <div>
-          <header>
-            <h2>{name}</h2>
-            <time>{date}</time>
-          </header>
-          <p>{text}</p>
-          {!isAnswer && (
-            <footer>
-              <button>Reply</button>
-            </footer>
-          )}
-        </div>
-      </article>
+import css from "./Comment.module.css";
 
-      <ul>
-        {comments?.map((comment, index) => (
-          <li key={index}>
-            <Comment
-              name={comment.name}
-              text={comment.text}
-              image={comment.image}
-              time={comment.time}
-              isAnswer={true}
-            />
-          </li>
-        ))}
-      </ul>
-    </>
-  );
+const Comment = ({ image, name, time, text, comments, isAnswer }) => {
+    return (
+        <>
+            <article>
+                <figure>
+                    <img src={image} alt={`${name}`}></img>
+                </figure>
+                <div>
+                    <header>
+                        <h2>{name}</h2>
+                        <time>{time}</time>
+                    </header>
+                    <p className={css.CommentText}>{text}</p>
+                    {!isAnswer && (
+                        <footer>
+                            <button>Reply</button>
+                        </footer>
+                    )}
+                </div>
+            </article>
+
+            <ul>
+                {comments?.map((comment, index) => (
+                    <li key={index}>
+                        <Comment
+                            name={comment.name}
+                            text={comment.text}
+                            image={comment.image}
+                            time={comment.time}
+                            isAnswer={true}
+                        />
+                    </li>
+                ))}
+            </ul>
+        </>
+    );
 };
 
 export default Comment;

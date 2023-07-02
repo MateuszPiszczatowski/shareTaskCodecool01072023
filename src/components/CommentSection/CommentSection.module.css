@@ -1,0 +1,21 @@
+:root {
+    font-size: 20px;
+
+    --img-size: clamp(150px, 10vw + 3rem, 300px);
+    --fs-xl: clamp(3rem, 5vw + 1rem, 5rem);
+    --fs-md: clamp(1rem, 3vw + 1rem, 1.5rem);
+    --fs-sm: clamp(0.75rem, 2vw + 0.8rem, 1.25rem);
+    --fs-xs: clamp(0.5rem, 1vw + 0.5rem, 0.75rem);
+}
+
+.CommentSection {
+    display: flex;
+    flex-direction: column;
+    padding: 5vh 5vw;
+    position: absolute;
+}
+h1 {
+    display: block;
+    font-size: var(--fs-xl);
+    margin: 0;
+}
