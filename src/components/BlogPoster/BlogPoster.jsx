@@ -7,8 +7,15 @@ class BlogPoster extends Component {
   };
 
   onTextInput = (e) => {
-    this.setState({ postText: e.target.value, counter: e.target.textLength });
-    console.log(this.state.postText, this.state.counter);
+    this.setState(
+      (prevState) => {
+        console.log(prevState);
+        return { postText: e.target.value, counter: e.target.textLength };
+      },
+      () => {
+        console.log(this.state);
+      }
+    );
   };
 
   handleSubmit = (e) => {
@@ -30,7 +37,7 @@ class BlogPoster extends Component {
           <p></p>
         </label>
         <textarea id="text1" onInput={this.onTextInput} />
-        <input type="submit" value="Submit" disabled={this.state.counter < 100 ? true : false} />
+        <input type="submit" value="Submit" disabled={this.state.counter < 100} />
       </form>
     );
   }
